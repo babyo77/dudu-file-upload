@@ -1,27 +1,86 @@
 {
-  "name": "file-upload",
-  "version": "0.1.0",
-  "private": true,
+  "name": "dudu-file-upload-components",
+  "version": "0.1.30",
+  "type": "module",
+  "description": "A highly customizable, config-driven file upload component library built with React, TailwindCSS, and class-variance-authority",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "keywords": [
+    "react",
+    "file-upload",
+    "drag-drop",
+    "components",
+    "tailwindcss",
+    "typescript",
+    "config-driven",
+    "shadcn"
+  ],
+  "author": "dudu <dudu.email@dudu.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dudu/file-upload-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dudu/file-upload-components/issues"
+  },
+  "homepage": "https://github.com/dudu/file-upload-components#readme",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:lib": "tsc --project tsconfig.lib.json && rollup -c",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pack": "npm pack",
+    "prepublishOnly": "npm run build:lib"
+  },
+  "peerDependencies": {
+    "@radix-ui/react-slot": ">=1.0.0",
+    "class-variance-authority": ">=0.7.0",
+    "clsx": ">=1.0.0",
+    "lucide-react": ">=0.200.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
     "next": "15.4.5"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "autoprefixer": "^10.4.21",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
-    "@eslint/eslintrc": "^3"
+    "lucide-react": "^0.534.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "rollup": "^4.28.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
