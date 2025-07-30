@@ -10,6 +10,7 @@
 !.yarn/releases
 !.yarn/versions
 /.rollup.cache/
+/dist
 
 # testing
 /coverage
